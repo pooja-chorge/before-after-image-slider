@@ -1,0 +1,92 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  place-items: center;
+  background: #efefef;
+}
+.container{
+  position: relative;
+  height: 500px;
+  width: 750px;
+  overflow: hidden;
+  background: #fff;
+  border: 7px solid #fff;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
+}
+.container .images{
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.container .images .grey-img{
+  height: 100%;
+  width: 100%;
+  background: url("../images/black-and-white-car.jpg") no-repeat;
+}
+.container .images .colorfull-img{
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background: url("../images/car.jpg") no-repeat;
+}
+.container .slider{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+.container .slider input{
+  width: 100%;
+  outline: none;
+  background: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.slider input::-webkit-slider-thumb{
+  height: 486px;
+  width: 3px;
+  background: none;
+  -webkit-appearance: none;
+  cursor: col-resize;
+}
+.slider .slider-line{
+  height: 100%;
+  position: absolute;
+  left: 49.85%;
+  pointer-events: none;
+}
+.slider .slider-line span{
+  height: 42px;
+  width: 42px;
+  background-color: #f3f3f3;
+  border: 2px solid #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.slider .slider-line span::before,
+.slider .slider-line span::after{
+  position: absolute;
+  content: "";
+  top: 50%;
+  border: 10px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.slider .slider-line span::before{
+  left: 40%;
+  border-left-color: #717171;
+}
+.slider .slider-line span::after{
+  left: 60%;
+  border-top-color: #717171;
+}
